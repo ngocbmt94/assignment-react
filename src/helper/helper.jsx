@@ -1,5 +1,5 @@
 const BASE_URL = "https://dummyjson.com/products";
-const LIMIT_PRODUCTS = 5;
+const LIMIT_PRODUCTS = 20;
 
 
 function scrollToTop() {

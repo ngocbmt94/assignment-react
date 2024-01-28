@@ -1,5 +1,5 @@
 import { useContext, useEffect, useCallback, useState, createContext} from "react";
-import {BASE_URL, LIMIT_PRODUCTS, scrollToTop} from "../helper/helper"
+import {BASE_URL, LIMIT_PRODUCTS, scrollToTop} from "../helper/helper";
 
 const ProductsContext = createContext();
 
@@ -9,6 +9,7 @@ function ProductsProvider({children}) {
     const [error, setError] = useState("");
     const [indexScroll, setIndexScroll] = useState(0);
     const [query, setQuery]= useState("");
+   
 
     const getProducts = useCallback(
         async function() {
@@ -58,7 +59,7 @@ function ProductsProvider({children}) {
     }
 
     return (
-        <ProductsContext.Provider value= {{products, error, indexScroll, isLoading, getMoreProduct, handleSearchSubmit}}>
+        <ProductsContext.Provider value= {{products, error, indexScroll, isLoading, getMoreProduct,handleSearchSubmit}}>
             {children}
         </ProductsContext.Provider>
     )

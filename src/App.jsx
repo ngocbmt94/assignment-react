@@ -1,16 +1,15 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { ProductsProvider } from "./context/ProductsProvider";
 
-import Header from "./components/Header";
-import ListProducts from "./components/ListProduct";
+import AppLayout from './AppLayout';
 import Error from "./components/Error";
 import ProductItemDetail from "./components/ProductItemDetail";
-import Main from './components/Main';
 import { ProductDetailProvider } from './context/ProductDetailProvider';
+
 
 const router = createBrowserRouter([{
   path: "/",
-  element: <ListProducts/>,
+  element: <AppLayout />,
   errorElement: <Error />,
 }, {
   path: "/:productId",
@@ -22,10 +21,9 @@ const router = createBrowserRouter([{
 function App() {
   return (
     <ProductsProvider>
-      <Header />
-      <Main>
-        <RouterProvider router={router} />
-      </Main>
+      <RouterProvider router={router}>
+        <AppLayout/>
+      </RouterProvider>
     </ProductsProvider>
   )
 }

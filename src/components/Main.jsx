@@ -1,7 +1,9 @@
-function Main({children}) {
+import ListProducts from "./ListProduct";
+
+function Main() {
     return (
         <main className="pt-24 px-6">
-            {children}
+          <ListProducts />
         </main>
     )
 }
